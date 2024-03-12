@@ -40,7 +40,7 @@ class TrackingWalletInteractionProcessor(GenericProcessorSnapshot):
         txs_hset = await redis_conn.hgetall(epoch_txs_htable(epoch.epochId))
         all_txs = {k.decode(): EthTransactionReceipt.parse_raw(v) for k, v in txs_hset.items()}
 
-        wallet_address = '0xae2Fc483527B8EF99EB5D9B44875F005ba1FaE13'
+        wallet_address = '0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5'
         wallet_txs = list(
             map(
                 lambda x: x.dict(), filter(
